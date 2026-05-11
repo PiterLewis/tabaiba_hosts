@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, type JSX } from "react";
+import { useEffect, useRef, type ElementType } from "react";
 
 export function Reveal({
   children,
@@ -10,7 +10,7 @@ export function Reveal({
 }: {
   children: React.ReactNode;
   delay?: number;
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
   className?: string;
 }) {
   const ref = useRef<HTMLElement | null>(null);
@@ -32,7 +32,7 @@ export function Reveal({
     return () => io.disconnect();
   }, [delay]);
 
-  const Component = Tag as any;
+  const Component = Tag as ElementType;
   return (
     <Component ref={ref} className={`reveal ${className}`.trim()}>
       {children}
