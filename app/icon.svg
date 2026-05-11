@@ -1,40 +1,150 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
-  <g transform="translate(0 33)">
-    <!-- tronco -->
-    <path d="M108 172 C 106 162, 104 144, 108 128 C 110 120, 112 114, 114 110 L 130 110 C 132 114, 134 120, 136 128 C 140 144, 138 162, 136 172 Z" fill="#2a2520"/>
-    <!-- ramas principales -->
-    <g fill="none" stroke="#2a2520" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M120 110 C 100 102, 70 90, 42 62"/>
-      <path d="M121 110 C 108 90, 92 64, 80 38"/>
-      <path d="M122 110 C 122 88, 122 60, 120 28"/>
-      <path d="M123 110 C 136 90, 152 62, 162 32"/>
-      <path d="M124 110 C 148 102, 180 90, 210 70"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 240 240" overflow="visible">
+  <!-- sombra suelo -->
+  <ellipse cx="120" cy="212" rx="34" ry="4" fill="#2a2520" opacity="0.18"/>
+
+  <!-- TRONCO gris-beige con sombra y luz -->
+  <path d="M104 212 C 102 200, 100 178, 104 156 C 106 145, 108 138, 110 132 L 134 132 C 136 138, 140 148, 142 160 C 144 180, 142 200, 140 212 Z"
+        fill="#bdb6ab" stroke="#2a2520" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M134 132 C 136 142, 140 160, 142 180 C 143 195, 141 206, 140 212 L 132 212 C 134 200, 134 180, 132 160 C 131 148, 130 138, 132 132 Z"
+        fill="#8e887e" opacity="0.55"/>
+  <path d="M111 138 C 109 150, 107 172, 108 196 C 108 204, 109 209, 110 212"
+        fill="none" stroke="#d6cfc3" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <ellipse cx="116" cy="172" rx="2.8" ry="1.6" fill="#6e685f" stroke="#2a2520" stroke-width="0.8"/>
+
+  <!-- RAMAS PRINCIPALES — 4 capas (outline + body + sombra + highlight) -->
+  <g fill="none" stroke="#2a2520" stroke-linecap="round" stroke-linejoin="round" stroke-width="22">
+    <path d="M120 132 C 100 122, 70 108, 42 78"/>
+    <path d="M121 132 C 108 110, 92 82, 80 52"/>
+    <path d="M122 132 C 122 108, 122 78, 120 42"/>
+    <path d="M123 132 C 136 110, 152 80, 162 46"/>
+    <path d="M124 132 C 148 122, 180 110, 210 88"/>
+  </g>
+  <g fill="none" stroke="#bdb6ab" stroke-linecap="round" stroke-linejoin="round" stroke-width="17">
+    <path d="M120 132 C 100 122, 70 108, 42 78"/>
+    <path d="M121 132 C 108 110, 92 82, 80 52"/>
+    <path d="M122 132 C 122 108, 122 78, 120 42"/>
+    <path d="M123 132 C 136 110, 152 80, 162 46"/>
+    <path d="M124 132 C 148 122, 180 110, 210 88"/>
+  </g>
+  <g fill="none" stroke="#8e887e" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" opacity="0.65">
+    <path d="M122 136 C 102 126, 72 112, 44 82"/>
+    <path d="M123 136 C 110 114, 94 86, 82 54"/>
+    <path d="M124 136 C 124 110, 124 80, 122 44"/>
+    <path d="M125 134 C 138 112, 154 82, 164 48"/>
+    <path d="M126 134 C 150 124, 182 112, 212 90"/>
+  </g>
+  <g fill="none" stroke="#d6cfc3" stroke-linecap="round" stroke-width="3" opacity="0.85">
+    <path d="M118 128 C 98 118, 68 104, 40 74"/>
+    <path d="M119 128 C 106 106, 90 78, 78 48"/>
+    <path d="M120 128 C 120 104, 120 74, 118 38"/>
+    <path d="M121 128 C 134 106, 150 76, 160 42"/>
+    <path d="M122 128 C 146 118, 178 106, 208 84"/>
+  </g>
+
+  <!-- SUB-RAMAS — mismas 3 capas -->
+  <g fill="none" stroke="#2a2520" stroke-linecap="round" stroke-linejoin="round" stroke-width="14">
+    <path d="M42 78 C 34 64, 28 54, 22 42"/>
+    <path d="M42 78 C 50 64, 54 54, 56 42"/>
+    <path d="M80 52 C 72 38, 66 28, 62 20"/>
+    <path d="M80 52 C 86 38, 90 28, 94 20"/>
+    <path d="M120 42 C 114 32, 110 24, 108 16"/>
+    <path d="M120 42 C 126 32, 130 24, 132 16"/>
+    <path d="M162 46 C 154 34, 150 26, 148 18"/>
+    <path d="M162 46 C 168 34, 172 26, 174 18"/>
+    <path d="M210 88 C 204 74, 200 64, 198 54"/>
+    <path d="M210 88 C 216 76, 220 66, 224 56"/>
+  </g>
+  <g fill="none" stroke="#bdb6ab" stroke-linecap="round" stroke-linejoin="round" stroke-width="9.5">
+    <path d="M42 78 C 34 64, 28 54, 22 42"/>
+    <path d="M42 78 C 50 64, 54 54, 56 42"/>
+    <path d="M80 52 C 72 38, 66 28, 62 20"/>
+    <path d="M80 52 C 86 38, 90 28, 94 20"/>
+    <path d="M120 42 C 114 32, 110 24, 108 16"/>
+    <path d="M120 42 C 126 32, 130 24, 132 16"/>
+    <path d="M162 46 C 154 34, 150 26, 148 18"/>
+    <path d="M162 46 C 168 34, 172 26, 174 18"/>
+    <path d="M210 88 C 204 74, 200 64, 198 54"/>
+    <path d="M210 88 C 216 76, 220 66, 224 56"/>
+  </g>
+  <g fill="none" stroke="#d6cfc3" stroke-linecap="round" stroke-width="2" opacity="0.85">
+    <path d="M40 76 C 32 62, 26 52, 20 40"/>
+    <path d="M40 76 C 48 62, 52 52, 54 40"/>
+    <path d="M78 50 C 70 36, 64 26, 60 18"/>
+    <path d="M78 50 C 84 36, 88 26, 92 18"/>
+    <path d="M118 40 C 112 30, 108 22, 106 14"/>
+    <path d="M118 40 C 124 30, 128 22, 130 14"/>
+    <path d="M160 44 C 152 32, 148 24, 146 16"/>
+    <path d="M160 44 C 166 32, 170 24, 172 16"/>
+    <path d="M208 86 C 202 72, 198 62, 196 52"/>
+    <path d="M208 86 C 214 74, 218 64, 222 54"/>
+  </g>
+
+  <!-- RACIMOS DE HOJAS — pompones amarillo-verde en cada una de las 10 puntas -->
+  <g stroke="#2a2520" stroke-width="1.5" stroke-linejoin="round">
+    <g transform="translate(22 42)">
+      <circle cx="-5" cy="-1" r="4.5" fill="#b8c95a"/>
+      <circle cx="0"  cy="-5" r="5"   fill="#c8d670"/>
+      <circle cx="5"  cy="-2" r="4.5" fill="#c8d670"/>
+      <circle cx="-2" cy="2"  r="4"   fill="#b8c95a"/>
+      <circle cx="3"  cy="3"  r="3.5" fill="#c8d670"/>
     </g>
-    <!-- sub-ramas -->
-    <g fill="none" stroke="#2a2520" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M42 62 C 36 50, 30 42, 24 32"/>
-      <path d="M42 62 C 50 50, 54 42, 58 32"/>
-      <path d="M80 38 C 72 26, 66 18, 62 12"/>
-      <path d="M80 38 C 86 26, 90 18, 94 12"/>
-      <path d="M120 28 C 114 20, 110 14, 108 8"/>
-      <path d="M120 28 C 126 20, 130 14, 132 8"/>
-      <path d="M162 32 C 154 22, 150 16, 148 10"/>
-      <path d="M162 32 C 168 22, 172 16, 174 10"/>
-      <path d="M210 70 C 204 58, 200 50, 198 42"/>
-      <path d="M210 70 C 216 58, 220 50, 224 42"/>
+    <g transform="translate(56 42)">
+      <circle cx="-5" cy="-1" r="4.5" fill="#c8d670"/>
+      <circle cx="0"  cy="-5" r="5"   fill="#b8c95a"/>
+      <circle cx="5"  cy="-2" r="4.5" fill="#c8d670"/>
+      <circle cx="-2" cy="3"  r="4"   fill="#c8d670"/>
     </g>
-    <!-- pompones de hojas (10 puntas) -->
-    <g fill="#7ba05b" stroke="#2a2520" stroke-width="1.5" stroke-linejoin="round">
-      <circle cx="24"  cy="32" r="6"/>
-      <circle cx="58"  cy="32" r="6"/>
-      <circle cx="62"  cy="12" r="6"/>
-      <circle cx="94"  cy="12" r="6"/>
-      <circle cx="108" cy="8"  r="6.5"/>
-      <circle cx="132" cy="8"  r="6.5"/>
-      <circle cx="148" cy="10" r="6"/>
-      <circle cx="174" cy="10" r="6"/>
-      <circle cx="198" cy="42" r="6"/>
-      <circle cx="224" cy="42" r="6"/>
+    <g transform="translate(62 20)">
+      <circle cx="-5" cy="-1" r="4.5" fill="#c8d670"/>
+      <circle cx="0"  cy="-5" r="5"   fill="#c8d670"/>
+      <circle cx="5"  cy="-2" r="4.5" fill="#b8c95a"/>
+      <circle cx="0"  cy="3"  r="4"   fill="#c8d670"/>
+      <circle cx="4"  cy="3"  r="3.5" fill="#b8c95a"/>
+    </g>
+    <g transform="translate(94 20)">
+      <circle cx="-5" cy="-1" r="4.5" fill="#b8c95a"/>
+      <circle cx="0"  cy="-5" r="5"   fill="#c8d670"/>
+      <circle cx="5"  cy="-2" r="4.5" fill="#c8d670"/>
+      <circle cx="-1" cy="3"  r="4"   fill="#c8d670"/>
+    </g>
+    <g transform="translate(108 16)">
+      <circle cx="-5" cy="-1" r="4.5" fill="#c8d670"/>
+      <circle cx="0"  cy="-5" r="5"   fill="#b8c95a"/>
+      <circle cx="5"  cy="-2" r="4.5" fill="#c8d670"/>
+      <circle cx="-2" cy="3"  r="4"   fill="#c8d670"/>
+      <circle cx="3"  cy="3"  r="3.5" fill="#b8c95a"/>
+    </g>
+    <g transform="translate(132 16)">
+      <circle cx="-5" cy="-1" r="4.5" fill="#b8c95a"/>
+      <circle cx="0"  cy="-5" r="5"   fill="#c8d670"/>
+      <circle cx="5"  cy="-2" r="4.5" fill="#c8d670"/>
+      <circle cx="0"  cy="3"  r="4"   fill="#c8d670"/>
+    </g>
+    <g transform="translate(148 18)">
+      <circle cx="-5" cy="-1" r="4.5" fill="#c8d670"/>
+      <circle cx="0"  cy="-5" r="5"   fill="#c8d670"/>
+      <circle cx="5"  cy="-2" r="4.5" fill="#b8c95a"/>
+      <circle cx="-1" cy="3"  r="4"   fill="#c8d670"/>
+      <circle cx="4"  cy="2"  r="3.5" fill="#c8d670"/>
+    </g>
+    <g transform="translate(174 18)">
+      <circle cx="-5" cy="-1" r="4.5" fill="#c8d670"/>
+      <circle cx="0"  cy="-5" r="5"   fill="#b8c95a"/>
+      <circle cx="5"  cy="-2" r="4.5" fill="#c8d670"/>
+      <circle cx="-1" cy="3"  r="4"   fill="#c8d670"/>
+    </g>
+    <g transform="translate(198 54)">
+      <circle cx="-5" cy="-1" r="4.5" fill="#b8c95a"/>
+      <circle cx="0"  cy="-5" r="5"   fill="#c8d670"/>
+      <circle cx="5"  cy="-2" r="4.5" fill="#c8d670"/>
+      <circle cx="-2" cy="3"  r="4"   fill="#c8d670"/>
+      <circle cx="3"  cy="3"  r="3.5" fill="#b8c95a"/>
+    </g>
+    <g transform="translate(224 56)">
+      <circle cx="-5" cy="-1" r="4.5" fill="#c8d670"/>
+      <circle cx="0"  cy="-5" r="5"   fill="#c8d670"/>
+      <circle cx="5"  cy="-2" r="4.5" fill="#b8c95a"/>
+      <circle cx="0"  cy="3"  r="4"   fill="#c8d670"/>
     </g>
   </g>
 </svg>
