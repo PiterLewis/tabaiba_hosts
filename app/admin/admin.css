@@ -1,0 +1,113 @@
+/* CSS específica de /admin. Aislada del globals.css de la landing.
+   Tailwind preflight está apagado global (no rompemos la landing styled-jsx),
+   así que aquí hacemos un reset minimal SOLO dentro de .admin-scope. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.admin-scope {
+  /* shadcn tokens — derivados de la paleta Tabaiba */
+  --background: 40 50% 96%;
+  --foreground: 240 6% 12%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 240 6% 12%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 6% 12%;
+
+  --primary: 240 6% 12%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 40 30% 92%;
+  --secondary-foreground: 240 6% 12%;
+
+  --muted: 40 25% 94%;
+  --muted-foreground: 240 5% 44%;
+
+  --accent: 40 75% 70%;
+  --accent-foreground: 240 6% 12%;
+
+  --destructive: 4 70% 52%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 240 6% 84%;
+  --input: 240 6% 84%;
+  --ring: 240 6% 12%;
+
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  min-height: 100vh;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Mini-preflight scoped: necesario para que las utilities `border`,
+   `border-b`, etc. de shadcn rendericen bordes (border-style por defecto
+   es `none`; Tailwind preflight lo cambia a `solid`). */
+.admin-scope,
+.admin-scope *,
+.admin-scope *::before,
+.admin-scope *::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: hsl(var(--border));
+}
+
+.admin-scope h1,
+.admin-scope h2,
+.admin-scope h3,
+.admin-scope h4,
+.admin-scope p,
+.admin-scope ul,
+.admin-scope ol,
+.admin-scope figure {
+  margin: 0;
+}
+.admin-scope ul,
+.admin-scope ol {
+  padding: 0;
+  list-style: none;
+}
+
+.admin-scope button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.admin-scope input,
+.admin-scope select,
+.admin-scope textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+.admin-scope a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.admin-scope img,
+.admin-scope svg {
+  display: block;
+  max-width: 100%;
+}
+
+.admin-scope :focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
