@@ -1,0 +1,340 @@
+:root {
+  --bg: #ffffff;
+  --bg-soft: #fafafa;
+  --bg-section: #f5f5f7;
+  --ink: #1d1d1f;
+  --ink-soft: #6e6e73;
+  --line: #d2d2d7;
+
+  --canary-blue: #0080c4;
+  --canary-yellow: #f5c518;
+  --canary-white: #ffffff;
+
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+
+  --radius-card: 18px;
+  --radius-pill: 980px;
+  --max-w: 1120px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: clamp(24px, 5vw, 64px);
+}
+
+.section {
+  padding-block: clamp(80px, 12vw, 160px);
+}
+
+.section--white {
+  background: var(--bg);
+}
+
+.section--soft {
+  background: var(--bg-section);
+}
+
+/* Typography */
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+
+.h-display {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.h-1 {
+  font-size: clamp(40px, 6vw, 72px);
+}
+
+.h-2 {
+  font-size: clamp(32px, 4.5vw, 56px);
+}
+
+.h-3 {
+  font-size: clamp(22px, 2vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.lead {
+  font-size: clamp(18px, 1.6vw, 22px);
+  color: var(--ink-soft);
+  max-width: 60ch;
+  line-height: 1.45;
+}
+
+.canary-blue {
+  color: var(--canary-blue);
+}
+
+.canary-flag {
+  background-image: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 18%,
+    var(--canary-blue) 50%,
+    var(--canary-yellow) 82%,
+    var(--canary-yellow) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  padding-inline: 0.02em;
+}
+
+.canary-underline {
+  background-image: linear-gradient(
+    transparent 75%,
+    var(--canary-yellow) 75%
+  );
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding-inline: 0.05em;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  transition: opacity 200ms var(--ease), transform 200ms var(--ease),
+    background-color 200ms var(--ease);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-secondary {
+  color: var(--ink);
+  padding: 14px 0;
+}
+
+.btn-secondary .arrow {
+  transition: transform 200ms var(--ease);
+}
+
+.btn-secondary:hover .arrow {
+  transform: translateX(4px);
+}
+
+.btn-on-dark {
+  color: #fff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Hero — collage de 3 columnas. CSS CRÍTICA: vive aquí (no en styled-jsx)
+   para evitar flash de imagen sin contenedor positioned al primer paint. */
+/* ------------------------------------------------------------------ */
+.hero {
+  position: relative;
+  min-height: 100vh; /* fallback */
+  min-height: 100svh; /* iOS Safari: estable frente al show/hide del address bar */
+  display: flex;
+  align-items: flex-end;
+  padding-block: 120px clamp(80px, 12vh, 140px);
+  overflow: hidden;
+  color: #fff;
+  background: var(--bg);
+}
+.hero-collage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  gap: 8px;
+  background: var(--bg);
+}
+.hero-col {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  transform: translateY(-100%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.hero-col img {
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      85% 60% at 25% 85%,
+      rgba(0, 0, 0, 0.62) 0%,
+      rgba(0, 0, 0, 0.15) 55%,
+      rgba(0, 0, 0, 0) 80%
+    ),
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.1) 55%,
+      rgba(0, 0, 0, 0) 100%
+    );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-collage.is-ready .hero-col {
+  animation: hero-drop 1000ms var(--ease) var(--d, 0ms) forwards;
+}
+@keyframes hero-drop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-collage.is-ready .hero-col {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
